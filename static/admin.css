@@ -1,0 +1,14 @@
+body{
+    background-color: skyBlue;
+    text-align: center;
+}
+
+.adm{
+ margin-top: 150px;
+}
+
+.adm input{
+    border: 2px solid blue;
+    border-radius: 10px;
+
+ }

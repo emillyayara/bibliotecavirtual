@@ -1,0 +1,26 @@
+body{
+    background-color: skyBlue;
+    text-align: center;
+
+}
+.inicio{
+    text-align: center;
+    font-family: style;
+    margin-top: 10%;
+
+}
+.inicio h1{
+     font-size: 50px;
+}
+.cad{
+    display: flex;
+    text-align: center;
+    margin-left: 480px;
+    margin-right: 50px;
+
+}
+.cad a{
+     margin-left: 40px;
+     text-align: center;
+     border-radius: 10%;
+}

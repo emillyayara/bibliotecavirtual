@@ -1,0 +1,17 @@
+body{
+    background-color: skyBlue;
+    text-align: center;
+}
+.log{
+ margin-top: 150px;
+
+ }
+
+ .log input{
+    border: 2px solid blue;
+    border-radius: 10px;
+
+ }
+ .log p{
+    color: red;
+ }

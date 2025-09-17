@@ -1,0 +1,51 @@
+body{
+    background-color: skyBlue;
+    text-align: center;
+    color: white;
+
+}
+
+.livros{
+    display: flex;
+}
+
+.livro1{
+
+font-size:15px;
+margin-left: 85px;
+margin-right: 30px;
+font-style: italic;
+color: white;
+display: flex;
+}
+
+.livros2{
+
+font-size:15px;
+margin-left: 300px;
+display: flex;
+}
+
+.livros3{
+
+font-style: italic;
+color: white;
+font-size:15px;
+margin-left: 335px;
+margin-right: 1000px;
+display: flex;
+}
+.texto{
+font-style: italic;
+color: white;
+font-size:15px;
+
+
+display: flex;
+}
+.texto2{
+margin-left: 30px;
+}
+.texto3{
+margin-left: 60px;
+}

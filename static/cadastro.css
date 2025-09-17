@@ -1,0 +1,12 @@
+body{
+    background-color: skyBlue;
+    text-align: center;
+}
+
+.cad{
+    margin-top: 150px;
+}
+.cad input{
+    border: 2px solid blue;
+    border-radius: 10px;
+}
