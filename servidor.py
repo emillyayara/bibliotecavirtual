@@ -4,6 +4,7 @@ app = Flask(__name__)
 cad = ['clara,clara@gmail,99','emilly,emilly@gmail,77']
 log = []
 senha = "123"
+livros = []
 
 
 @app.route('/')
@@ -33,7 +34,7 @@ def pag_cadastro():
 def administrador():
     senhadig = request.form.get('senha')
     if senhadig == senha:
-        return render_template('cadlivros.html')
+        return render_template('pagiframe.html')
 
     else:
         return render_template('admin.html')
@@ -64,6 +65,38 @@ def logar():
 @app.route('/pag_login')
 def pag_login():
     return render_template('login.html')
+
+@app.route('/cadlivro')
+def cadastro_de_livro():
+    return render_template('cadlivros.html')
+
+@app.route('/removlivro')
+def remover_livro():
+    return render_template('removlivros.html')
+    msg = 'Livro removido'
+
+@app.route('/listarlivro')
+def listar_livros():
+    global livros
+    nome = request.form.get('nome')
+    descricao = request.form.get('descrição')
+    autor = request.form.get('autor')
+    if nome & descricao & autor in livros:
+        livros.remove(nome)
+
+    else:
+        msg = 'Não consta na lista de livos'
+    return render_template('listarlivro.html', lista= livros)
+
+@app.route('/detalhes')
+def mostrar_detalhes():
+    nome = request.values.get('nome')
+    achei = None
+    for livro in livros:
+        if nome == livro[0]:
+            achei = livro
+            break
+
 
 if __name__ == '__main__':
     app.run(debug=True)
