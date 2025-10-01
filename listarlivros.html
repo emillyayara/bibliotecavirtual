@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> Livros cadastrados no sistema </h1>
+    {% if livros %}
+        <hr>
+        {% for livro in lista %}
+            <p>
+                Nome:
+                <a href="/detalhes?insta={{amor[2]}}">
+                    {{livro[0]}}
+                </a>
+
+
+            </p>
+            <hr>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
