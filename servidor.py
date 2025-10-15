@@ -6,6 +6,7 @@ cad = ['clara,clara@gmail,99','emilly,emilly@gmail,77']
 livros = []
 log = []
 senha = "123"
+livros = []
 
 
 @app.route('/')
@@ -78,8 +79,12 @@ def administrador():
     senhadig = request.form.get('senha')
 
     if senhadig == senha:
+<<<<<<< HEAD
         session['login'] = 'admin'
         return render_template('admin/pagiframe.html')
+=======
+        return render_template('pagiframe.html')
+>>>>>>> 453ddd37b19ee3c6bfb587e7d0ef2c98fc8f8c7e
 
     else:
         return render_template('admin/admin.html')
@@ -117,6 +122,38 @@ def logar():
 @app.route('/pag_login')
 def pag_login():
     return render_template('login.html')
+
+@app.route('/cadlivro')
+def cadastro_de_livro():
+    return render_template('cadlivros.html')
+
+@app.route('/removlivro')
+def remover_livro():
+    return render_template('removlivros.html')
+    msg = 'Livro removido'
+
+@app.route('/listarlivro')
+def listar_livros():
+    global livros
+    nome = request.form.get('nome')
+    descricao = request.form.get('descrição')
+    autor = request.form.get('autor')
+    if nome & descricao & autor in livros:
+        livros.remove(nome)
+
+    else:
+        msg = 'Não consta na lista de livos'
+    return render_template('listarlivro.html', lista= livros)
+
+@app.route('/detalhes')
+def mostrar_detalhes():
+    nome = request.values.get('nome')
+    achei = None
+    for livro in livros:
+        if nome == livro[0]:
+            achei = livro
+            break
+
 
 if __name__ == '__main__':
     app.run(debug=True)
