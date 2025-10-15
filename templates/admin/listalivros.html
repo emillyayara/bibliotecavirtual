@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" href="../../static/listalivros.css">
+</head>
+<body>
+   <div class="lista">
+    <h1> Livros cadastrados no sistema </h1>
+    {% if livros %}
+        <hr>
+        {% for livro in lista %}
+            <p>
+                Nome:
+                <a href="/detalhes?insta={{livro[2]}}">
+                    {{livro[0]}}
+                </a>
+            </p>
+            <p>
+                Autor:
+                <a href="/detalhes?insta={{livro[2]}}">
+                    {{livro[1]}}
+                </a>
+            </p>
+            <hr>
+
+        {% endfor %}
+    {% endif %}
+         </div>
+</body>
+</html>
